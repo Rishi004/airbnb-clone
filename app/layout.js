@@ -1,7 +1,19 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ProgressBar from "@badrap/bar-of-progress";
+// import {useRouter} from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
+const progress = new ProgressBar({
+    size: 4,
+    color: "#fe595e",
+    className: "z-50",
+    delay: 100
+});
+
+// Router.events.on("routeChangeStart", progress.start);
+// Router.events.on("routeChangeComplete", progress.finish);
+// Router.events.on("routeChangeError", progress.finish);
 
 export const metadata = {
     title: "Airbnb@Clone - Rishi",
@@ -11,6 +23,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+            {/* <head>
+                <link
+                    href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+                    rel="stylesheet"
+                />
+            </head> */}
             <body className={inter.className}>{children}</body>
         </html>
     );
